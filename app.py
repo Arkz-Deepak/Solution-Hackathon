@@ -31,7 +31,7 @@ def generate_emergency_alert(location):
     """Calls Gemini API to generate a context-aware alert."""
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('models/gemini-1.5-flash-latest')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         prompt = f"A physical slip and fall has just been detected by the AI CCTV system in the {location}. Generate a short, urgent, professional 2-sentence alert to be dispatched to the on-site hospitality security team. Do not use hashtags."
         response = model.generate_content(prompt)
         return response.text
